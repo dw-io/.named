@@ -1,7 +1,7 @@
 # dotnamed
-A simple framework for setting up a caching DNS daemon on a mac using BIND.
+A simple framework for setting up a DNS caching daemon on a mac using BIND.
 
-ISP-based DNS servers tend to be slow and frustrating to use.  Sometimes you don't want to wait for TTLs to pass after a zone change.  Besides that, public DNS and shared DNS caches combined with SSL exploits are common attack vectors.  After setting up a caching server at home, I realized I wanted something to go and that's what this is.
+ISP-based DNS servers tend to be slow and frustrating to use.  Sometimes you don't want to wait for TTLs to pass after a zone change.  Besides that, public DNS and shared DNS caches combined with SSL exploits are common attack vectors.  After setting up a caching server at home, I realized I wanted something for my laptop _to go_ and that's what this is.
 
 The options for setting up a DNS caching daemon under OS X are pretty limited.  I have a long history of using BIND, and its available in homebrew.  I know configuring BIND is not straightforward for most, so I packaged up my config here for a dead simple caching server that only listens on 127.0.0.1.  There is also an example zone file, if you want to host your own domains in this instance, you can just copy/modify that config (zones/dotnamed.zone).  It would be trivial to slave a zone off of another server if you have corporate DNS or something along those lines.
 
@@ -9,6 +9,8 @@ INSTALL
 ===========
 
 Clone repository to ~/.named.  If you want to install elsewhere, that is fine, but you'll need to change the first line of named.sh to reflect the new location.
+
+Full install process:
 
 ```
 git clone git@github.com:dw-io/dotnamed.git ~/.named
@@ -25,13 +27,13 @@ echo "source ~/.named/named.sh" >> ~/.bash_profile
 USAGE
 =====
 
-once named is configured with the above call, you can go ahead and add 127.0.0.1 in as your primary and/or only DNS server through network preferences.  Its worth testing to make sure its working.  Try this:
+once named is configured with the above call, you can go ahead and add 127.0.0.1 in as your primary and/or only DNS server through network preferences.  Its worth testing to make sure its working before you do that, though.  Try this:
 
 ```
 host google.com 127.0.0.1
 ```
 
-If its working, you'll get something like this back:
+If its working, you'll get something like, but not exactly this back:
 
 ```
 Using domain server:
@@ -58,6 +60,8 @@ google.com mail is handled by 40 alt3.aspmx.l.google.com.
 google.com mail is handled by 30 alt2.aspmx.l.google.com.
 ```
 
+You will likely get no results if its misconfigured or a timeout, if the daemon isn't running.
+
 Assuming you added the named.sh file to your .bash_profile, you will have a few handy tools at your disposal.  Here is what they do:
 
 To restart named:
@@ -72,7 +76,7 @@ To stop named and prevent it from starting again on reboot:
 named_stop
 ```
 
-To start named:
+To start named and ensure it starts on reboot:
 
 ```
 named_start
@@ -84,7 +88,7 @@ To reload named after a config change:
 named_reload
 ```
 
-To update root DNS server list (it changes from time to time):
+To update root DNS server list (it changes from time to time but very rarely):
 
 ```
 named_updateroot
