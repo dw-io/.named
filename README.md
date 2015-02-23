@@ -3,10 +3,12 @@ A simple framework for setting up a DNS caching daemon on a mac using BIND.
 
 ISP-based DNS servers tend to be slow and frustrating to use.  Sometimes you don't want to wait for TTLs to pass after a zone change.  Besides that, public DNS and shared DNS caches combined with SSL exploits are common attack vectors.  After setting up a caching server at home, I realized I wanted something for my laptop _to go_ and that's what this is.
 
-The options for setting up a DNS caching daemon under OS X are pretty limited.  I have a long history of using BIND, and its available in homebrew.  I know configuring BIND is not straightforward for most, so I packaged up my config here for a dead simple caching server that only listens on 127.0.0.1.  There is also an example zone file, if you want to host your own domains in this instance, you can just copy/modify that config (zones/dotnamed.zone).  It would be trivial to slave a zone off of another server if you have corporate DNS or something along those lines.
+The options for setting up a DNS caching daemon under OS X are pretty limited.  I have a long history of using BIND, and its available in homebrew.  I know configuring BIND is not straightforward for most, so I packaged up my config here for a dead simple caching server that only listens on 127.0.0.1.  There is also an example zone file, if you want to host your own domains in this instance, you can just copy/modify that config (zones/dotnamed.zone).  It would be trivial to slave a zone off of another server, if you have corporate DNS or something along those lines.
 
 INSTALL
 ===========
+
+It is required that you have homebrew installed to use this.  Its really simple, though.  Check out http://brew.sh for details.
 
 Clone repository to ~/.named.  If you want to install elsewhere, that is fine, but you'll need to change the first line of named.sh to reflect the new location.
 
