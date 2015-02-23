@@ -62,19 +62,19 @@ named_restart
 
 To stop named and prevent it from starting again on reboot:
 
-```named_stop```
+named_stop
 
 To start named:
 
-```named_start```
+named_start
 
 To reload named after a config change:
 
-```named_reload```
+named_reload
 
 To update root DNS server list (it changes from time to time):
 
-```named_updateroot```
+named_updateroot
 
 NOTES
 =====
