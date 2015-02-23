@@ -15,7 +15,7 @@ Clone repository to ~/.named.  If you want to install elsewhere, that is fine, b
 Full install process:
 
 ```
-git clone git@github.com:dw-io/dotnamed.git ~/.named
+git clone https://github.com/dw-io/dotnamed.git ~/.named
 source ~/.named/named.sh
 named_configure
 ```
