@@ -35,7 +35,8 @@ named_configure () {
     echo $NAMEDPLIST 
     [ -e "${NAMEDPLIST}" ] && sudo rm -f $NAMEDPLIST
     sudo ln -fs $DOTNAMED/org.isc.named.plist $NAMEDPLIST
-    sudo launchctl load -w $NAMEDPLIST
+
+    named_start
 }
 
 named_start () {
