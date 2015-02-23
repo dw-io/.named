@@ -1,0 +1,12 @@
+$TTL    1h
+@   1D  IN  SOA @ root (
+                        2015022301  ; serial (increment with each change)
+                        3H          ; refresh
+                        15M         ; retry
+                        1W          ; expiry
+                        1D )        ; minimum
+
+            NS    ns.dotnamed.
+
+ns          A        127.0.0.1
+example     A        127.0.0.1
