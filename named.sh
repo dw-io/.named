@@ -1,7 +1,7 @@
-export DOTNAMED=$HOME/.named
-export NAMEDPID=/usr/local/var/named/named.pid
-export NAMEDCONF=$DOTNAMED/named.conf
-export NAMEDPLIST=/Library/LaunchDaemons/org.isc.named.plist 
+DOTNAMED=$HOME/.named
+NAMEDPID=/usr/local/var/named/named.pid
+NAMEDCONF=$DOTNAMED/named.conf
+NAMEDPLIST=/Library/LaunchDaemons/org.isc.named.plist 
 
 [ -f "$NAMEDPID" ] || echo "* named not currently running, but can be started with named_start"
 
