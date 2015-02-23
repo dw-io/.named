@@ -25,7 +25,7 @@ USAGE
 
 once named is configured with the above call, you can go ahead and add 127.0.0.1 in as your primary and/or only DNS server through network preferences.  Its worth testing to make sure its working.  Try this:
 
-``` host google.com 127.0.0.1```
+```host google.com 127.0.0.1```
 
 If its working, you'll get something like this back:
 
@@ -58,7 +58,7 @@ Assuming you added the named.sh file to your .bash_profile, you will have a few 
 
 To restart named:
 
-named_restart
+```named_restart```
 
 To stop named and prevent it from starting again on reboot:
 
