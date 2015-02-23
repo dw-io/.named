@@ -35,7 +35,7 @@ once named is configured with the above call, you can go ahead and add 127.0.0.1
 host google.com 127.0.0.1
 ```
 
-If its working, you'll get something like, but not exactly this back:
+If its working, you'll get something like this, but not exactly this back:
 
 ```
 Using domain server:
@@ -62,9 +62,9 @@ google.com mail is handled by 40 alt3.aspmx.l.google.com.
 google.com mail is handled by 30 alt2.aspmx.l.google.com.
 ```
 
-You will likely get no results if its misconfigured or a timeout, if the daemon isn't running.
+You will likely get no results, if its misconfigured or a timeout, if the daemon isn't running.
 
-Assuming you added the named.sh file to your .bash_profile, you will have a few handy tools at your disposal.  Here is what they do:
+Assuming you added the named.sh file to your .bash_profile, you will have a few handy tools at your disposal at all times.  Here is what they do:
 
 To restart named:
 
