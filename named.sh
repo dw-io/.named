@@ -29,7 +29,7 @@ named_configure () {
     ln -fs $DOTNAMED/zones/dotnamed.zone /usr/local/var/named/dotnamed.zone
 
     # launchctl requires root ownership
-    sudo chown root $NAMEDPLIST
+    sudo chown root $DOTNAMED/org.isc.named.plist
 
     # install the plist so that the service starts on reboot
     echo $NAMEDPLIST 
