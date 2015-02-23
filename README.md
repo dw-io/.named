@@ -18,14 +18,18 @@ named_configure
 
 This should install and start named.  It will load into launchd so it will be available after reboot as well.  There are a few control functions in named.sh.  If you always want them to be available, do this:
 
-```echo "source ~/.named/named.sh" >> ~/.bash_profile```
+```
+echo "source ~/.named/named.sh" >> ~/.bash_profile
+```
 
 USAGE
 =====
 
 once named is configured with the above call, you can go ahead and add 127.0.0.1 in as your primary and/or only DNS server through network preferences.  Its worth testing to make sure its working.  Try this:
 
-```host google.com 127.0.0.1```
+```
+host google.com 127.0.0.1
+```
 
 If its working, you'll get something like this back:
 
@@ -58,23 +62,33 @@ Assuming you added the named.sh file to your .bash_profile, you will have a few 
 
 To restart named:
 
-```named_restart```
+```
+named_restart
+```
 
 To stop named and prevent it from starting again on reboot:
 
+```
 named_stop
+```
 
 To start named:
 
+```
 named_start
+```
 
 To reload named after a config change:
 
+```
 named_reload
+```
 
 To update root DNS server list (it changes from time to time):
 
+```
 named_updateroot
+```
 
 NOTES
 =====
