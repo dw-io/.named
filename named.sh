@@ -12,14 +12,16 @@ named_updateroot () {
 
 named_configure () {
     # permissions are not always as they need to be on these directories
-    sudo chown $USER /usr/local/etc /usr/local/sbin
+    [ -d "/usr/local/etc" ]  && sudo chown $USER /usr/local/etc
+    [ -d "/usr/local/sbin" ] && sudo chown $USER /usr/local/sbin
+
     brew install bind
 
     # remove if there is a symlink at our destination or rename if its an existing config
+    # install primary bind configuration
     [ -h "/usr/local/etc/named.conf" ] && rm -f /usr/local/etc/named.conf
     [ -f "/usr/local/etc/named.conf" ] && mv /usr/local/etc/named.conf /usr/local/etc/named.conf.$(date +"%s")
     ln -fs $NAMEDCONF /usr/local/etc/named.conf
-
     # set up list of root DNS servers
     [ -h "/usr/local/var/named/named.root" ] && rm -f /usr/local/var/named/named.root
     [ -f "/usr/local/var/named/named.root" ] && mv /usr/local/var/named/named.root /usr/local/var/named/named.root.$(date +"%s")
