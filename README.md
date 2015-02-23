@@ -16,7 +16,7 @@ source ~/.named/named.sh
 named_configure
 ```
 
-This should install and start named.  It will load into launchd, so it will be available after reboot as well.  There are a few control functions in named.sh.  If you always want them to be available, do this:
+This should install and start named.  It will load into launchd so it will be available after reboot as well.  There are a few control functions in named.sh.  If you always want them to be available, do this:
 
 ```echo "source ~/.named/named.sh" >> ~/.bash_profile```
 
