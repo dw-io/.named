@@ -1,7 +1,7 @@
 # dotnamed
 A simple framework for setting up a caching DNS daemon on a mac using BIND.
 
-ISP-based DNS servers tend to be slow and frustrating to use.  Sometimes you don't want to wait for TTLs to pass after a zone change.  Besides that public DNS and shared DNS caches combined with SSL exploits are common attack vectors.  After setting up a caching server at home, I realized I wanted something to go.
+ISP-based DNS servers tend to be slow and frustrating to use.  Sometimes you don't want to wait for TTLs to pass after a zone change.  Besides that, public DNS and shared DNS caches combined with SSL exploits are common attack vectors.  After setting up a caching server at home, I realized I wanted something to go and that's what this is.
 
 The options for setting up a DNS caching daemon under OS X are pretty limited.  I have a long history of using BIND, and its available in homebrew.  I know configuring BIND is not straightforward for most, so I packaged up my config here for a dead simple caching server that only listens on 127.0.0.1.  There is also an example zone file, if you want to host your own domains in this instance, you can just copy/modify that config (zones/dotnamed.zone).  It would be trivial to slave a zone off of another server if you have corporate DNS or something along those lines.
 
@@ -82,3 +82,4 @@ NOTES
 - I've noticed that queries fail for the first few seconds after starting up named.
 - The named log gets written here:  /usr/local/var/log/named/named.log
 - This has only been tested on OS 10.9 and 10.10
+- For security reasons, this will only answer on 127.0.0.1.  If you want to open it up to other hosts, you will need to modify listen-on, allow-query and allow-recursion in named.conf.  Read and be careful.
