@@ -58,7 +58,7 @@ Assuming you added the named.sh file to your .bash_profile, you will have a few 
 
 To restart named:
 
-```named_restart```
+named_restart
 
 To stop named and prevent it from starting again on reboot:
 
