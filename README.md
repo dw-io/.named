@@ -96,7 +96,7 @@ To update root DNS server list (it changes from time to time but very rarely):
 named_updateroot
 ```
 
-If you want to maintain your own zone files for developing or just having your own aliases for machines, you can look to zones/dotnamed.zone and the related entry in named.conf.  You'll likely have to do a little reading and testing to figure out how to work with that.  Maybe I will provide an easier interface down the road.
+If you want to maintain your own zone files for developing or just having your own aliases for machines, you can look to zones/dotnamed.zone and the related entry in named.conf for guidance.  You'll likely have to do a little reading and testing to figure out how to work with that.  Maybe I will provide an easier interface down the road.
 
 You can test that local zone with a query like this:
 
